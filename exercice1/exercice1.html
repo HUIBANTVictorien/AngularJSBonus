@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+  <title>exercice 1 angularJS partie bonus</title>
+</head>
+<body>
+  <div ng-app="app">
+    <form ng-controller="formCtrl" name="myForm">
+      <label>Email:
+        <input type="email" name="input" ng-model="email.text" required>
+      </label>
+      <div>
+        <br/>
+        <div style="width:50px; height:50px; background-color: green;" ng-show="myForm.input.$valid"  >
+        </div>
+        <span class="error" ng-show="myForm.input.$error.required">
+          Mail requis !</span>
+          <div style="width:50px; height:50px; background-color: red;" ng-show="myForm.input.$error.email">
+          </div>
+        </div>
+      </form>
+    </div>
+    <script>
+    var app = angular.module('app', [])
+    app.controller('formCtrl', function ($scope) {
+      $scope.email = {
+        text: 'SuperMickael@zebest.com'
+      };
+    });
+    </script>
+  </body>
+  </html>

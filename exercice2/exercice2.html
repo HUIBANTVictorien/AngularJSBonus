@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+  <title>exercice 2 angularJS partie bonus</title>
+</head>
+<body ng-app="alertApp">
+  <div ng-controller="alertController">
+    <button type="button" name="alertButton" ng-click="doAlert(alert)">OH MY GOD !!!</button>
+  </div>
+  <script>
+  angular.module('alertApp', [])
+    .controller('alertController', ['$scope', '$window', function($scope, $window) {
+      $scope.alert = 'OH MY GOD';
+      $scope.doAlert = function(alert) {
+        $window.alert(alert);
+      };
+    }]);
+</script>
+</body>
+</html>
